@@ -8,9 +8,10 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# --- 스타일링 (CSS) - 이 부분이 가장 중요합니다! ---
-# >>>>>> 여기가 삼중 따옴표로 시작해서 마지막에 확실히 닫히는지 확인해주세요! <<<<<<
-st.markdown("""
+# --- 스타일링 (CSS) ---
+# >>>>>> 매우 중요! 이 부분의 시작과 끝 따옴표를 꼭 확인해주세요! <<<<<<
+# CSS 코드를 여러 줄로 나누어 오류 가능성을 줄입니다.
+css_styles = """
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
     
@@ -56,30 +57,4 @@ st.markdown("""
     .stMarkdown h1 {
         color: #f50057; /* 핫핑크 제목 */
         text-align: center;
-        font-size: 4.5em; /* 제목 크기 키움 */
-        text-shadow: 4px 4px 10px rgba(0,0,0,0.2); /* 그림자 강화 */
-        margin-bottom: 40px;
-        font-weight: 700;
-        letter-spacing: -1px; /* 자간 조절 */
-    }
-    .stMarkdown h2 {
-        color: #ff9800; /* 오렌지 소제목 */
-        border-bottom: 4px solid #ffeb3b;
-        padding-bottom: 15px;
-        margin-top: 50px;
-        font-size: 2.8em; /* 소제목 크기 키움 */
-        text-align: center;
-        font-weight: 700;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-    }
-    .stMarkdown h3 {
-        color: #2196f3; /* 파란색 부제목 */
-        font-size: 2.0em; /* 부제목 크기 키움 */
-        margin-top: 30px;
-        border-left: 8px solid #2196f3; /* 왼쪽 테두리 강화 */
-        padding-left: 15px;
-        font-weight: 700;
-    }
-    .advice-box {
-        background-color: #fffde7; /* 연한 노란색 배경 */
-        padding:
+        font-
