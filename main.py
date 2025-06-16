@@ -1,50 +1,51 @@
 import streamlit as st
+import random
 
-# --- 페이지 설정 ---
-st.set_page_config(
-    page_title="✨ 엘든 링 플레이어 스타일 조언 마법사 ⚔️🏹",
-    page_icon="👑",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+def main():
+    st.title("오늘의 식사 메뉴 추천 🍽️")
 
-# --- 스타일링 (CSS) ---
-css_styles = """
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Cinzel:wght@400;700&display=swap');
-    
-    body {
-        font-family: 'Noto Sans KR', sans-serif;
-        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* 다크 판타지 배경 */
-        color: #ecf0f1; /* 밝은 텍스트 색상 */
-        margin: 0;
-        padding: 0;
-    }
-    .main {
-        background-color: #1a1a1a; /* 어두운 컨텐츠 영역 */
-        padding: 50px;
-        border-radius: 20px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* 깊고 어두운 그림자 */
-        max-width: 1000px; /* 최대 너비 */
-        margin: 40px auto;
-        border: 2px solid #5a5a5a; /* 은은한 테두리 */
-    }
-    .stSelectbox > div > div {
-        background-color: #333333; /* 셀렉트 박스 배경 */
-        border-radius: 12px;
-        border: 1px solid #7f8c8d;
-        padding: 10px;
-        font-size: 1.1em;
-        color: #ecf0f1;
-    }
-    .stSelectbox > div > div:hover {
-        border-color: #3498db;
-    }
-    .stButton > button {
-        background-color: #e74c3c; /* 버튼 색상 (강렬한 붉은색) */
-        color: white;
-        font-weight: bold;
-        border-radius: 12px;
-        padding: 12px 25px;
-        border: none;
-        box-
+    # 메뉴 리스트 정의
+    menu_options = [
+        "김치찌개",
+        "된장찌개",
+        "비빔밥",
+        "제육볶음",
+        "불고기",
+        "돈까스",
+        "파스타",
+        "피자",
+        "햄버거",
+        "초밥",
+        "회덮밥",
+        "칼국수",
+        "냉면",
+        "닭갈비",
+        "삼겹살",
+        "순대국",
+        "뼈해장국",
+        "부대찌개",
+        "떡볶이",
+        "치킨",
+        "카레",
+        "오므라이스",
+        "짜장면",
+        "짬뽕",
+        "볶음밥"
+    ]
+
+    st.write("아래 버튼을 누르면 오늘의 식사 메뉴가 무작위로 선택됩니다!")
+
+    if st.button("메뉴 추천 받기"):
+        # 메뉴 리스트에서 무작위로 하나 선택
+        selected_menu = random.choice(menu_options)
+
+        st.subheader("오늘의 추천 메뉴는 바로...")
+        st.success(f"✨ **{selected_menu}** ✨ 입니다!")
+        st.balloons() # 메뉴 추천 시 풍선 효과
+
+    st.markdown("---")
+    st.write("다른 메뉴를 원하시면 '메뉴 추천 받기' 버튼을 다시 눌러주세요.")
+    st.write("맛있는 식사 되세요! 😊")
+
+if __name__ == "__main__":
+    main()
